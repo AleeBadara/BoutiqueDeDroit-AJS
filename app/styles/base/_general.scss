@@ -1,0 +1,33 @@
+.header_title{
+    padding: 1rem;
+}
+
+.content_container{
+    padding-bottom: 2rem;
+}
+
+.btn{
+    width: 100%;
+    margin-top: 3rem;
+    background-color:$button-color!important; 
+}
+
+.txtField{
+    width: 100%;
+    //margin: 0;
+    font-size: 'large';
+}
+
+.addIcon{
+    background-color:$button-color!important; 
+}
+
+.headline_title{
+    padding: 1rem;
+    padding-bottom: 0;
+    color: #f50057!important;
+}
+
+.active{
+    border-bottom: 3px solid #fff;
+}

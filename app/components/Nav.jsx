@@ -1,0 +1,28 @@
+const React = require('react');
+const { NavLink } = require('react-router-dom');
+const { AppBar, Toolbar, Typography, Button, IconButton } = require('material-ui');
+const MenuIcon = require('material-ui-icons').Menu;
+
+
+const Nav = () => {
+    return (
+        <div className="nav_container">
+            <AppBar position="static" className="nav_appbar">
+                <Toolbar>
+                    <IconButton color="contrast" aria-label="Menu">
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography type="title" color="inherit" >Boutique de droit</Typography>
+                    <div className="menu_container">
+                        <NavLink exact to="/new" activeClassName="active"><Button color="contrast">Créer un nouveau cas</Button></NavLink>
+                        <NavLink exact to="/suivi" activeClassName="active"><Button color="contrast">Suivi des cas</Button></NavLink>
+
+                    </div>
+                    <Button color="contrast">Se déconnecter</Button>
+                </Toolbar>
+            </AppBar>
+        </div>
+    )
+};
+
+module.exports = Nav;
