@@ -14,16 +14,12 @@
 
 ### Minification du bundle.js
 
-On peut minifier le fichier bundle.js si l'environnement est la production. Pour cela, il faut:
+On peut minifier le fichier bundle.js pour déploiement en production. Pour cela, il faut:
 
-1- Setter l'environnement en PROD à partir de la CLI: 
+1- Exécuter la commande suivante de la CLI: 
 
-**export NODE_ENV=PROD** (si CLI Linux) 
+**webpack -p** 
 
-ou
+2- Vérifier que le fichier bundle.js est minifié)
 
-**SET \\"NODE_ENV=PROD\\"** (si CLI Windows)
-
-2- Exécuter la commande: webpack (vérifier que le fichier bundle.js est minifié)
-
-3- Exécuter la commande node server.js pour démarrer le serveur
+3- Exécuter la commande npm start pour démarrer le serveur
