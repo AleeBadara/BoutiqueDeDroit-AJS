@@ -23,3 +23,9 @@ On peut minifier le fichier bundle.js pour déploiement en production. Pour cela
 2- Vérifier que le fichier bundle.js est minifié)
 
 3- Exécuter la commande npm start pour démarrer le serveur
+
+### Stack
+
+Ce projet est développé en ReactJs. Il utilise aussi la librairie Material-UI qui est le Google's Material Design pour ReactJs.
+
+Pour plus d'information sur Material-UI, visiter: [http://www.material-ui.com/#/]
