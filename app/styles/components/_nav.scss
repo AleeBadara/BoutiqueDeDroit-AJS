@@ -9,6 +9,8 @@
 
 .nav_appbar{
     background-color: $navbar-color !important;
+    position: fixed !important;
+    top: 0;
 }
 
 .avatar{
