@@ -1,5 +1,6 @@
 const React = require('react');
-const { Paper, Button, Typography, TextField } = require('material-ui');
+const { Paper, Button, Typography, TextField, Avatar } = require('material-ui');
+const PageviewIcon = require('material-ui-icons').Pageview;
 
 class SuiviCas extends React.Component {
     render() {
@@ -40,8 +41,50 @@ class SuiviCas extends React.Component {
                         </fieldset>
                     </div>
 
-                    <div className="small-6 small-centered columns">
-                        //Tableau ici 
+                    <div className="tableau_resultat">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Prénoms</th>
+                                    <th>Type cas</th>
+                                    <th>Créé par</th>
+                                    <th>Detail</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Aminata</td>
+                                    <td>Niang</td>
+                                    <td>Divorce</td>
+                                    <td>Soukey</td>
+                                    <td className="colonneDetail"><Avatar className="avatar">
+                                        <PageviewIcon className="detailButton" />
+                                    </Avatar>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Aminata</td>
+                                    <td>Niang</td>
+                                    <td>Divorce</td>
+                                    <td>Soukey</td>
+                                    <td className="colonneDetail"><Avatar className="avatar">
+                                        <PageviewIcon className="detailButton" />
+                                    </Avatar>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Aminata</td>
+                                    <td>Niang</td>
+                                    <td>Divorce</td>
+                                    <td>Soukey</td>
+                                    <td className="colonneDetail"><Avatar className="avatar">
+                                        <PageviewIcon className="detailButton" />
+                                    </Avatar>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
