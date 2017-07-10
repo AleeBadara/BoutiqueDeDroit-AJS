@@ -25,7 +25,14 @@ class Nouveau extends React.Component {
 
                             <Typography type="headline" className="text-center headline_title">Cas</Typography>
                             <TextField required id="cas" label="Cas" type="text" className="txtField" marginForm />
-                            <TextField required id="description" label="Description" type="text" className="txtField" marginForm />
+                            <TextField required id="description" label="Exposé du problème" type="text" className="txtField" marginForm />
+                            <label>Catégorie juridique <select>
+                                    <option value="husker">Husker</option>
+                                    <option value="starbuck">Starbuck</option>
+                                    <option value="hotdog">Hot Dog</option>
+                                    <option value="apollo">Apollo</option>
+                                </select>
+                            </label>
                         </form>
                     </div>
                     <div className="row">
