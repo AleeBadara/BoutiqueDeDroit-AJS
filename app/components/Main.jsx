@@ -12,7 +12,7 @@ class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            login: false
+            loggedIn: false
         }
         super(props);
 
@@ -28,21 +28,21 @@ class Main extends React.Component {
         console.log(isAuthenticated);
         this.setState(
             {
-                login: isAuthenticated
+                loggedIn: isAuthenticated
             }
         );
     }
     render() {
-        let { login } = this.state;
+        let { loggedIn } = this.state;
         return (
             <HashRouter>
                 <div>
-                    <Nav isLoggedIn={login} deconnecter={this.handleDeconnexion} />
+                    <Nav isLoggedIn={loggedIn} deconnecter={this.handleDeconnexion} />
                     <div className="row main_container">
                         <div className="columns medium-10 small-centered">
                             <PublicRoute exact path="/" component={Connexion} onLogin={this.handleLogin} />
-                            <PrivateRoute isAuthenticated={login} path="/new" component={Nouveau} />
-                            <PrivateRoute isAuthenticated={login} path="/suivi" component={SuiviCas} />
+                            <PrivateRoute isAuthenticated={loggedIn} path="/new" component={Nouveau} />
+                            <PrivateRoute isAuthenticated={loggedIn} path="/suivi" component={SuiviCas} />
                         </div>
                     </div>
                 </div>
