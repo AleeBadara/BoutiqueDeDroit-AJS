@@ -42,13 +42,14 @@ class SuiviCas extends React.Component {
                     </div>
 
                     <div className="tableau_resultat">
-                        <table>
+                        <table className="stack">
                             <thead>
                                 <tr>
                                     <th>Nom</th>
                                     <th>Prénoms</th>
                                     <th>Type cas</th>
                                     <th>Créé par</th>
+                                    <th>Etat</th>
                                     <th>Detail</th>
                                 </tr>
                             </thead>
@@ -58,6 +59,7 @@ class SuiviCas extends React.Component {
                                     <td>Niang</td>
                                     <td>Divorce</td>
                                     <td>Soukey</td>
+                                    <td>Traité</td>
                                     <td className="colonneDetail"><Avatar className="avatar">
                                         <PageviewIcon className="detailButton" />
                                     </Avatar>
@@ -68,6 +70,7 @@ class SuiviCas extends React.Component {
                                     <td>Niang</td>
                                     <td>Divorce</td>
                                     <td>Soukey</td>
+                                    <td>En cours</td>
                                     <td className="colonneDetail"><Avatar className="avatar">
                                         <PageviewIcon className="detailButton" />
                                     </Avatar>
@@ -78,6 +81,7 @@ class SuiviCas extends React.Component {
                                     <td>Niang</td>
                                     <td>Divorce</td>
                                     <td>Soukey</td>
+                                    <td>Clos</td>
                                     <td className="colonneDetail"><Avatar className="avatar">
                                         <PageviewIcon className="detailButton" />
                                     </Avatar>
