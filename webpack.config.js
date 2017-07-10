@@ -27,7 +27,8 @@ module.exports = {
             Connexion: 'app/components/Connexion.jsx',
             Nouveau: "app/components/Nouveau.jsx",
             SuiviCas: "app/components/SuiviCas.jsx",
-            Footer: "app/components/Footer.jsx",
+            PrivateRoute: "app/components/router/PrivateRoute.jsx",
+            PublicRoute: "app/components/router/PublicRoute.jsx",
             ApplicationStyles: 'app/styles/app.scss'
         },
         extensions: ['.js', '.jsx']
@@ -37,7 +38,7 @@ module.exports = {
             {
                 loader: 'babel-loader',
                 query: {
-                    presets: ['react', 'es2015']
+                    presets: ['react', 'es2015', 'stage-0']
                 },
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/
