@@ -1,7 +1,7 @@
-const React = require('react');
-const { Redirect } = require('react-router-dom');
-const { NavLink } = require('react-router-dom');
-const { Paper, Button, Typography, TextField } = require('material-ui');
+var React = require('react');
+var { Redirect } = require('react-router-dom');
+var { NavLink } = require('react-router-dom');
+var { Paper, Button, Typography, TextField } = require('material-ui');
 
 class Connexion extends React.Component {
     constructor(props) {
@@ -28,12 +28,10 @@ class Connexion extends React.Component {
         this.setState({
             password: e.target.value
         });
-        console.log(this.state.password);
     }
     handleLogin(e) {
         let { identifiant, password } = this.state;
         if (!identifiant) {
-            console.log('check identifiant');
             this.setState({
                 errorMessage: 'Identifiant vide ou incorrect.'
             });
@@ -48,17 +46,12 @@ class Connexion extends React.Component {
         this.setState({
             doRedirect: true
         });
-        console.log(this.props);
         this.props.onLogin(true);
-        console.log('Succés');
     }
     render() {
-        const { from } = this.props.location.state || { from: { pathname: '/new' } }
-        const { doRedirect } = this.state
-        let { errorMessage } = this.state;
+        let { from } = this.props.location.state || { from: { pathname: '/new' } }
+        let { doRedirect, errorMessage } = this.state;
         if (doRedirect) {
-            console.log('from');
-            console.log({ from });
             return (
                 <Redirect to={from} />
             )
@@ -79,6 +72,6 @@ class Connexion extends React.Component {
             </Paper>
         );
     }
-};
+}
 
 module.exports = Connexion;

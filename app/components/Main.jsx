@@ -1,12 +1,12 @@
-const React = require('react');
-const { HashRouter, Route, Redirect } = require('react-router-dom');
+var React = require('react');
+var { HashRouter, Route, Redirect } = require('react-router-dom');
 
-const Nav = require('Nav');
-const Connexion = require('Connexion');
-const Nouveau = require('Nouveau');
-const SuiviCas = require('SuiviCas');
-const PrivateRoute = require('PrivateRoute');
-const PublicRoute = require('PublicRoute');
+var Nav = require('Nav');
+var Connexion = require('Connexion');
+var Nouveau = require('Nouveau');
+var SuiviCas = require('SuiviCas');
+var PrivateRoute = require('PrivateRoute');
+var PublicRoute = require('PublicRoute');
 
 class Main extends React.Component {
     constructor(props) {
@@ -31,13 +31,6 @@ class Main extends React.Component {
                 login: isAuthenticated
             }
         );
-    }
-
-    componentWillUpdate() {
-        console.log('1 ' + this.state.login);
-    }
-    componentDidUpdate() {
-        console.log('2 ' + this.state.login);
     }
     render() {
         let { login } = this.state;

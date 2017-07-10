@@ -1,6 +1,6 @@
-const React = require('react');
-const { Paper, Button, Typography, TextField, LabelRadio, RadioGroup, Divider } = require('material-ui');
-const AddIcon = require('material-ui-icons').Add;
+var React = require('react');
+var { Paper, Button, Typography, TextField, LabelRadio, RadioGroup, Divider } = require('material-ui');
+var AddIcon = require('material-ui-icons').Add;
 
 class Nouveau extends React.Component {
     render() {
@@ -27,11 +27,11 @@ class Nouveau extends React.Component {
                             <TextField required id="cas" label="Cas" type="text" className="txtField" marginForm />
                             <TextField required id="description" label="Exposé du problème" type="text" className="txtField" marginForm />
                             <label>Catégorie juridique <select>
-                                    <option value="husker">Husker</option>
-                                    <option value="starbuck">Starbuck</option>
-                                    <option value="hotdog">Hot Dog</option>
-                                    <option value="apollo">Apollo</option>
-                                </select>
+                                <option value="husker">Husker</option>
+                                <option value="starbuck">Starbuck</option>
+                                <option value="hotdog">Hot Dog</option>
+                                <option value="apollo">Apollo</option>
+                            </select>
                             </label>
                         </form>
                     </div>
@@ -43,7 +43,6 @@ class Nouveau extends React.Component {
                         </div>
                     </div>
                 </div>
-
             </Paper>
 
         );

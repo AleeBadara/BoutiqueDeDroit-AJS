@@ -1,8 +1,6 @@
-const React = require('react');
-const { Redirect } = require('react-router-dom');
-const { Route } = require('react-router-dom');
-
-let isAuthenticated = true;
+var React = require('react');
+var { Redirect } = require('react-router-dom');
+var { Route } = require('react-router-dom');
 
 const PrivateRoute = ({ component: Component, isAuthenticated, ...rest }) => (
     <Route {...rest} render={props => (

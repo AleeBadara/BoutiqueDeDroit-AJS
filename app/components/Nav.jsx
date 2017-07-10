@@ -1,7 +1,7 @@
-const React = require('react');
-const { NavLink } = require('react-router-dom');
-const { AppBar, Toolbar, Typography, Button, IconButton, Avatar } = require('material-ui');
-const MenuIcon = require('material-ui-icons').Menu;
+var React = require('react');
+var { NavLink } = require('react-router-dom');
+var { AppBar, Toolbar, Typography, Button, IconButton, Avatar } = require('material-ui');
+var MenuIcon = require('material-ui-icons').Menu;
 
 
 class Nav extends React.Component {

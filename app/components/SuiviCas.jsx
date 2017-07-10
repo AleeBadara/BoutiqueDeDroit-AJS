@@ -1,6 +1,6 @@
-const React = require('react');
-const { Paper, Button, Typography, TextField, Avatar } = require('material-ui');
-const PageviewIcon = require('material-ui-icons').Pageview;
+var React = require('react');
+var { Paper, Button, Typography, TextField, Avatar } = require('material-ui');
+var PageviewIcon = require('material-ui-icons').Pageview;
 
 class SuiviCas extends React.Component {
     render() {
