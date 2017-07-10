@@ -1,0 +1,13 @@
+{
+    "moduleFileExtensions": [
+        "js",
+        "jsx"
+    ],
+    "moduleNameMapper": {
+        "Connexion": "<rootDir>/app/components/Connexion.jsx",
+        "Main": "<rootDir>/app/components/Main.jsx",
+        "Nav": "<rootDir>/app/components/Nav.jsx",
+        "Nouveau": "<rootDir>/app/components/Nouveau.jsx",
+        "SuiviCas": "<rootDir>/app/components/SuiviCas.jsx"
+    }
+}
