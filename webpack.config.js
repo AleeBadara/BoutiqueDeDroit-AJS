@@ -28,6 +28,7 @@ module.exports = {
             Nouveau: "app/components/Nouveau.jsx",
             SuiviCas: "app/components/SuiviCas.jsx",
             Cas: "app/components/Cas.jsx",
+            DetailCas: "app/components/DetailCas.jsx",
             Filtre: "app/widgets/Filtre.jsx",
             PrivateRoute: "app/components/router/PrivateRoute.jsx",
             PublicRoute: "app/components/router/PublicRoute.jsx",
