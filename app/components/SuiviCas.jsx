@@ -1,46 +1,25 @@
 var React = require('react');
 var { Paper, Button, Typography, TextField, Avatar } = require('material-ui');
-var PageviewIcon = require('material-ui-icons').Pageview;
+
+var CasApi = require('CasApi');
+var Cas = require('Cas');
+var Filtre = require('Filtre');
 
 class SuiviCas extends React.Component {
     render() {
+        let renderCas = () => {
+            let results = CasApi.getAllCas();
+            return results.map((cas) => {
+                return (
+                    <Cas key={cas.id} {...cas} />
+                );
+            });
+        };
         return (
             <Paper elevation={4} >
                 <Typography type="display2" className="text-center header_title">Suivi cas</Typography>
                 <div className="row content_container">
-                    <div className="fieldset_container">
-                        <fieldset>
-                            <legend>Filtres</legend>
-                            <div className="row">
-                                <div className="small-3 columns">
-                                    <TextField required id="nom" label="Nom" type="text" className="txtField" marginForm />
-                                </div>
-                                <div className="small-3 columns small-offset-2">
-                                    <TextField required id="nom" label="Prénom" type="text" className="txtField" marginForm />
-                                </div>
-                                <div className="small-4 columns"></div>
-                            </div>
-                            <div className="row">
-                                <div className="small-3 columns">
-                                    <TextField id="dateCreationDebut" label="Date création entre" type="date" defaultValue="2017-05-24" className="txtField" marginForm />
-                                </div>
-                                <div className="small-3 columns small-offset-2">
-                                    <TextField id="dateCreationFin" label="et le" type="date" defaultValue="2017-05-24" className="txtField" marginForm />
-                                </div>
-                                <div className="small-4 columns"></div>
-                            </div>
-                            <div className="row">
-                                <div className="small-3 columns">
-                                    <TextField id="dateModificationDebut" label="Date modification entre" type="date" defaultValue="2017-05-24" className="txtField" marginForm />
-                                </div>
-                                <div className="small-3 columns small-offset-2">
-                                    <TextField id="dateModificationFin" label="et le" type="date" defaultValue="2017-05-24" className="txtField" marginForm />
-                                </div>
-                                <div className="small-4 columns"></div>
-                            </div>
-                        </fieldset>
-                    </div>
-
+                    <Filtre />
                     <div className="tableau_resultat">
                         <table className="stack">
                             <thead>
@@ -54,39 +33,7 @@ class SuiviCas extends React.Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Aminata</td>
-                                    <td>Niang</td>
-                                    <td>Divorce</td>
-                                    <td>Soukey</td>
-                                    <td>Traité</td>
-                                    <td className="colonneDetail"><Avatar className="avatar">
-                                        <PageviewIcon className="detailButton" />
-                                    </Avatar>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Aminata</td>
-                                    <td>Niang</td>
-                                    <td>Divorce</td>
-                                    <td>Soukey</td>
-                                    <td>En cours</td>
-                                    <td className="colonneDetail"><Avatar className="avatar">
-                                        <PageviewIcon className="detailButton" />
-                                    </Avatar>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Aminata</td>
-                                    <td>Niang</td>
-                                    <td>Divorce</td>
-                                    <td>Soukey</td>
-                                    <td>Clos</td>
-                                    <td className="colonneDetail"><Avatar className="avatar">
-                                        <PageviewIcon className="detailButton" />
-                                    </Avatar>
-                                    </td>
-                                </tr>
+                                {renderCas()}
                             </tbody>
                         </table>
                     </div>

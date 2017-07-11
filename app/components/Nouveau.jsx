@@ -1,14 +1,14 @@
 var React = require('react');
 var { Paper, Button, Typography, TextField, LabelRadio, RadioGroup, Divider } = require('material-ui');
 var AddIcon = require('material-ui-icons').Add;
-var Referentiels=require('Referentiels');
+var ReferentielsApi = require('ReferentielsApi');
 
 class Nouveau extends React.Component {
     render() {
-        let getCategorieJuridique=()=>{
-            let results= Referentiels.getCategorieJuridique();
-            return results.map((categorie)=>{
-                let {id, libelle}=categorie;
+        let getCategorieJuridique = () => {
+            let results = ReferentielsApi.getCategorieJuridique();
+            return results.map((categorie) => {
+                let { id, libelle } = categorie;
                 return (
                     <option key={id} value={libelle}>{libelle}</option>
                 );
