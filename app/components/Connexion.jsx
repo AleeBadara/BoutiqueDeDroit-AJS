@@ -1,6 +1,5 @@
 var React = require('react');
 var { Redirect } = require('react-router-dom');
-var { NavLink } = require('react-router-dom');
 var { Paper, Button, Typography, TextField } = require('material-ui');
 
 class Connexion extends React.Component {
