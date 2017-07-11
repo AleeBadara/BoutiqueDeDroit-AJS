@@ -29,6 +29,7 @@ module.exports = {
             SuiviCas: "app/components/SuiviCas.jsx",
             PrivateRoute: "app/components/router/PrivateRoute.jsx",
             PublicRoute: "app/components/router/PublicRoute.jsx",
+            Referentiels:"app/api/referentiels.js",
             ApplicationStyles: 'app/styles/app.scss'
         },
         extensions: ['.js', '.jsx']
