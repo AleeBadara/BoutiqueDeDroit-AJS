@@ -51,7 +51,6 @@ class Nouveau extends React.Component {
                     </div>
                 </div>
             </Paper>
-
         );
     }
 }

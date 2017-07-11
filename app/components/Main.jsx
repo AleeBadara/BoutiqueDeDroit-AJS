@@ -5,6 +5,7 @@ var Nav = require('Nav');
 var Connexion = require('Connexion');
 var Nouveau = require('Nouveau');
 var SuiviCas = require('SuiviCas');
+var DetailCas = require('DetailCas');
 var PrivateRoute = require('PrivateRoute');
 var PublicRoute = require('PublicRoute');
 
@@ -43,6 +44,7 @@ class Main extends React.Component {
                             <PublicRoute exact path="/" component={Connexion} onLogin={this.handleLogin} />
                             <PrivateRoute isAuthenticated={loggedIn} path="/new" component={Nouveau} />
                             <PrivateRoute isAuthenticated={loggedIn} path="/suivi" component={SuiviCas} />
+                            <Route path="/detailCas" component={DetailCas} />
                         </div>
                     </div>
                 </div>
