@@ -39,13 +39,13 @@ Ce projet est développé en ReactJs.
 
 ### Structure du projet
 
-1. app: dossier principal, contient tous les autres dossiers.
-2. api: contient tous les API REST exposés par notre backend et appelés par les différents composants.
-3. components: contient tous les composants principaux du projet.
-3. styles: contient tout le style de l'application (on utilise scss).
-4. widgets: contient des composants utilitaires (comme le composant Filtre par exemple utilisé dans un composant principal).
-5. app.jsx: est le point d'entrée.
-6. public: contient la page html index.html.
-7. jest.config.json et .babelrc: configuration pour utiliser le framework jest pour les tests.
-8. webpack.config.js: configuration du webpack.
-9. package.json: gestion des scripts, dépendances, etc. du projet.
+1. **app**: dossier principal, contient tous les autres dossiers.
+2. **api**: contient tous les API REST exposés par notre backend et appelés par les différents composants.
+3. **components**: contient tous les composants principaux du projet.
+3. **styles**: contient tout le style de l'application (on utilise scss).
+4. **widgets**: contient des composants utilitaires (comme le composant Filtre par exemple utilisé dans un composant principal).
+5. **app.jsx**: est le point d'entrée.
+6. **public**: contient la page html index.html.
+7. **jest.config.json** et **.babelrc**: configuration pour utiliser le framework jest pour les tests.
+8. **webpack.config.js**: configuration du webpack.
+9. **package.json**: gestion des scripts, dépendances, etc. du projet.
