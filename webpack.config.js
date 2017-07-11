@@ -27,9 +27,12 @@ module.exports = {
             Connexion: 'app/components/Connexion.jsx',
             Nouveau: "app/components/Nouveau.jsx",
             SuiviCas: "app/components/SuiviCas.jsx",
+            Cas: "app/components/Cas.jsx",
+            Filtre: "app/widgets/Filtre.jsx",
             PrivateRoute: "app/components/router/PrivateRoute.jsx",
             PublicRoute: "app/components/router/PublicRoute.jsx",
-            Referentiels:"app/api/referentiels.js",
+            CasApi: "app/api/CasApi.jsx",
+            ReferentielsApi: "app/api/ReferentielsApi.js",
             ApplicationStyles: 'app/styles/app.scss'
         },
         extensions: ['.js', '.jsx']
