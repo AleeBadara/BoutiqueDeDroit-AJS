@@ -45,19 +45,11 @@ class DetailCas extends React.Component {
                             </label>
                         </form>
                     </div>
-                    <div className="row">
-                        <div className="columns small-2">
-                            <Button raised color="primary" >Sans suite</Button>
-                        </div>
-                        <div className="columns small-2">
-                            <Button raised color="primary" >Clore</Button>
-                        </div>
-                        <div className="columns small-2">
-                            <Button raised color="primary" >Annuler</Button>
-                        </div>
-                        <div className="columns small-2">
-                            <Button raised color="primary" >Enregistrer</Button>
-                        </div>
+                    <div className="groupeButtonContainer">
+                        <Button className="groupeButton btnBlue" raised color="primary" >Sans suite</Button>
+                        <Button className="groupeButton btnBlue" raised color="primary" >Clore</Button>
+                        <Button className="groupeButton btnRose" raised color="primary" >Annuler</Button>
+                        <Button className="groupeButton btnRose" raised color="primary" >Enregistrer</Button>
                     </div>
                 </div>
             </Paper>

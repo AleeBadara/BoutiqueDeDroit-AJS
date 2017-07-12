@@ -1,0 +1,17 @@
+.groupeButtonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.groupeButton{
+    margin: 0.5rem;
+}
+
+.btnBlue{
+    background-color: $blue-color!important;
+}
+
+.btnRose{
+    background-color: $rose-color!important;
+}
