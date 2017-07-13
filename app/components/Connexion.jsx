@@ -1,6 +1,8 @@
 var React = require('react');
 var { Redirect } = require('react-router-dom');
+const PropTypes = require('prop-types');
 var { Paper, Button, Typography, TextField } = require('material-ui');
+
 
 class Connexion extends React.Component {
     constructor(props) {
@@ -71,6 +73,11 @@ class Connexion extends React.Component {
             </Paper>
         );
     }
+}
+
+
+Connexion.PropTypes = {
+    onLogin: PropTypes.func.isRequired
 }
 
 module.exports = Connexion;

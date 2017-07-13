@@ -1,4 +1,5 @@
-const React = require('react');
+var React = require('react');
+var PropTypes = require('prop-types');
 var { Paper, Button, Typography, TextField, LabelRadio, RadioGroup, Divider } = require('material-ui');
 var SaveIcon = require('material-ui-icons').Save;
 var CancelIcon = require('material-ui-icons').Cancel;
@@ -58,6 +59,10 @@ class DetailCas extends React.Component {
             </Paper>
         );
     }
+}
+
+DetailCas.PropTypes = {
+    selectedCas: PropTypes.object.isRequired
 }
 
 module.exports = DetailCas;

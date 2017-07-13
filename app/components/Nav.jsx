@@ -1,4 +1,5 @@
 var React = require('react');
+var PropTypes = require('prop-types');
 var { NavLink } = require('react-router-dom');
 var { AppBar, Toolbar, Typography, Button, IconButton, Avatar } = require('material-ui');
 var MenuIcon = require('material-ui-icons').Menu;
@@ -56,5 +57,9 @@ class Nav extends React.Component {
     }
 
 };
+
+Nav.PropTypes = {
+    deconnecter: PropTypes.func.isRequired
+}
 
 module.exports = Nav;

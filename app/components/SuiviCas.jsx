@@ -8,7 +8,7 @@ var Filtre = require('Filtre');
 class SuiviCas extends React.Component {
     constructor(props) {
         super(props);
-        this.handleSelectedCas=this.handleSelectedCas.bind(this);
+        this.handleSelectedCas = this.handleSelectedCas.bind(this);
     }
     handleSelectedCas(selectedCas) {
         this.props.onSelect(selectedCas);
@@ -18,7 +18,7 @@ class SuiviCas extends React.Component {
             let results = CasApi.getAllCas();
             return results.map((cas) => {
                 return (
-                    <Cas key={cas.id} {...cas} onSelect={this.handleSelectedCas} />
+                    <Cas key={cas.id} selectedCas={cas} onSelect={this.handleSelectedCas} />
                 );
             });
         };
