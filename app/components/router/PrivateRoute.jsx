@@ -2,10 +2,10 @@ var React = require('react');
 var { Redirect } = require('react-router-dom');
 var { Route } = require('react-router-dom');
 
-const PrivateRoute = ({ component: Component, isAuthenticated, ...rest }) => (
+const PrivateRoute = ({ component: Component, isAuthenticated, onSelect, selectedCas, ...rest }) => (
     <Route {...rest} render={props => (
         isAuthenticated ? (
-            <Component {...props} />
+            <Component onSelect={onSelect} selectedCas={selectedCas} {...props} />
         ) : (
                 <Redirect to={{
                     pathname: '/',

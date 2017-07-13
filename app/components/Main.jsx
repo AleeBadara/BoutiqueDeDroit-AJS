@@ -13,25 +13,32 @@ class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            loggedIn: false
+            loggedIn: false,
+            selectedCas: {}
         }
-        super(props);
-
         this.handleLogin = this.handleLogin.bind(this);
-        this.handleDeconnexion = this.handleDeconnexion.bind(this);;
+        this.handleDeconnexion = this.handleDeconnexion.bind(this);
+        this.handleSelectedCas = this.handleSelectedCas.bind(this);
     }
-    handleDeconnexion(value) {
+    handleDeconnexion(valeur) {
         this.setState({
-            login: value
-        })
+            loggedIn: valeur
+        });
+        this.setState({
+            selectedCas: {}
+        });
     }
     handleLogin(isAuthenticated) {
-        console.log(isAuthenticated);
         this.setState(
             {
                 loggedIn: isAuthenticated
             }
         );
+    }
+    handleSelectedCas(cas) {
+        this.setState({
+            selectedCas: { ...cas }
+        });
     }
     render() {
         let { loggedIn } = this.state;
@@ -42,9 +49,9 @@ class Main extends React.Component {
                     <div className="row main_container">
                         <div className="columns medium-10 small-centered">
                             <PublicRoute exact path="/" component={Connexion} onLogin={this.handleLogin} />
-                            <PrivateRoute isAuthenticated={loggedIn} path="/new" component={Nouveau} />
-                            <PrivateRoute isAuthenticated={loggedIn} path="/suivi" component={SuiviCas} />
-                            <Route path="/detailCas" component={DetailCas} />
+                            <PrivateRoute isAuthenticated={loggedIn} exact path="/new" component={Nouveau} />
+                            <PrivateRoute isAuthenticated={loggedIn} exact path="/suivi" component={SuiviCas} onSelect={this.handleSelectedCas} />
+                            <PrivateRoute isAuthenticated={loggedIn} exact path="/detailCas" component={DetailCas} selectedCas={this.state.selectedCas} />
                         </div>
                     </div>
                 </div>

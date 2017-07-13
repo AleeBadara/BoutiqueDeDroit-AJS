@@ -1,4 +1,5 @@
 var React = require('react');
+var { NavLink } = require('react-router-dom');
 var { Avatar } = require('material-ui');
 var PageviewIcon = require('material-ui-icons').Pageview;
 
@@ -8,7 +9,7 @@ class Cas extends React.Component {
         this.showDetail = this.showDetail.bind(this);
     }
     showDetail() {
-        console.log(this.props.id);
+        this.props.onSelect(this.props);
     }
     render() {
         let { id, nom, prenom, type, createdBy, etat } = this.props;
@@ -19,9 +20,9 @@ class Cas extends React.Component {
                 <td>{type}</td>
                 <td>{createdBy.nom} {createdBy.prenom}</td>
                 <td>{etat}</td>
-                <td className="colonneDetail"><Avatar className="avatar" onClick={this.showDetail}>
+                <td className="colonneDetail"><NavLink exact to="/detailCas"><Avatar className="avatar" onClick={this.showDetail}>
                     <PageviewIcon className="detailButton" />
-                </Avatar>
+                </Avatar></NavLink>
                 </td>
             </tr>
         );
