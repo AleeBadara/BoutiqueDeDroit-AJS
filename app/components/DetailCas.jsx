@@ -10,7 +10,9 @@ class DetailCas extends React.Component {
         super(props);
     }
     render() {
-        let { id, nom, prenom, type, createdBy, etat } = this.props.selectedCas;
+        let { adresse, age, cas, createdBy, description, etat, id, nom, prenom, type, telephone } = this.props.selectedCas;
+        console.log('DetailCas');
+        console.log(this.props.selectedCas);
         let getCategorieJuridique = () => {
             let results = ReferentielsApi.getCategorieJuridique();
             return results.map((categorie) => {
@@ -32,17 +34,17 @@ class DetailCas extends React.Component {
                         <form >
                             <TextField required id="nom" value={nom} label="Nom" type="text" className="txtField" marginForm />
                             <TextField required id="prenom" value={prenom} label="Prénom" type="text" className="txtField" marginForm />
-                            <TextField required id="age" label="Age" type="number" className="txtField" marginForm />
+                            <TextField required id="age" value={age} label="Age" type="number" className="txtField" marginForm />
                             <RadioGroup aria-label="Sexe" name="gender" className="radioGroup_display">
                                 <LabelRadio label="Homme" value="male" />
                                 <LabelRadio label="Femme" value="female" />
                             </RadioGroup>
 
-                            <TextField required id="adresse" label="Adresse" type="text" className="txtField" marginForm />
-                            <TextField required id="phone" label="Téléphone" type="text" className="txtField" marginForm />
+                            <TextField required id="adresse" value={adresse} label="Adresse" type="text" className="txtField" marginForm />
+                            <TextField required id="phone" value={telephone} label="Téléphone" type="text" className="txtField" marginForm />
 
-                            <TextField required id="cas" label="Cas" type="text" className="txtField" marginForm />
-                            <TextField required id="description" label="Exposé du problème" type="text" className="txtField" multiline rowsMax="5" marginForm />
+                            <TextField required id="cas" value={cas} label="Cas" type="text" className="txtField" marginForm />
+                            <TextField required id="description" value={description} label="Exposé du problème" type="text" className="txtField" multiline rowsMax="5" marginForm />
                             <label>Catégorie juridique <select>
                                 {getCategorieJuridique()}
                             </select>
