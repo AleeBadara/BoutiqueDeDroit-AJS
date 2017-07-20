@@ -14,11 +14,12 @@ class Nouveau extends React.Component {
             age: 0,
             cas: '',
             description: '',
-            etat: 'en cours',
+            etat: 'En cours',
             nom: '',
             prenom: '',
             sexe: '',
-            telephone: ''
+            telephone: '',
+            type: ''
         }
         this.handleAdresseInput = this.handleAdresseInput.bind(this);
         this.handleAgeInput = this.handleAgeInput.bind(this);
@@ -27,6 +28,8 @@ class Nouveau extends React.Component {
         this.handleNomInput = this.handleNomInput.bind(this);
         this.handlePrenomInput = this.handlePrenomInput.bind(this);
         this.handleTelephoneInput = this.handleTelephoneInput.bind(this);
+        this.handleSexeSelection = this.handleSexeSelection.bind(this);
+        this.handleCategorieSelection = this.handleCategorieSelection.bind(this);
 
         this.handleAddNewCas = this.handleAddNewCas.bind(this);
     }
@@ -63,7 +66,7 @@ class Nouveau extends React.Component {
     handleTelephoneInput(e) {
         this.setState({
             telephone: e.target.value
-        })
+        });
     }
     handleAddNewCas() {
         let editeur = {
@@ -74,8 +77,16 @@ class Nouveau extends React.Component {
             }
         };
         let newCas = { ...this.state, ...editeur };
-        console.log(newCas);
         CasApi.addNewCas(newCas);
+        this.props.history.push('/suivi');
+    }
+    handleSexeSelection(event, value) {
+        this.setState({ sexe: value });
+    }
+    handleCategorieSelection(e) {
+        this.setState({
+            type: e.target.value
+        });
     }
     render() {
         let getCategorieJuridique = () => {
@@ -97,9 +108,9 @@ class Nouveau extends React.Component {
                             <TextField required id="nom" label="Nom" type="text" className="txtField" onChange={this.handleNomInput} marginForm />
                             <TextField required id="prenom" label="Prénom" type="text" className="txtField" onChange={this.handlePrenomInput} marginForm />
                             <TextField required id="age" label="Age" type="number" className="txtField" onChange={this.handleAgeInput} marginForm />
-                            <RadioGroup aria-label="Sexe" name="gender" className="radioGroup_display">
-                                <LabelRadio label="Homme" value="male" />
-                                <LabelRadio label="Femme" value="female" />
+                            <RadioGroup aria-label="Sexe" name="gender" className="radioGroup_display" selectedValue={this.state.sexe} onChange={this.handleSexeSelection}>
+                                <LabelRadio label="Homme" value="H" />
+                                <LabelRadio label="Femme" value="F" />
                             </RadioGroup>
 
                             <Typography type="headline" className="text-center headline_title">Contact</Typography>
@@ -109,7 +120,7 @@ class Nouveau extends React.Component {
                             <Typography type="headline" className="text-center headline_title">Cas</Typography>
                             <TextField required id="cas" label="Cas" type="text" className="txtField" onChange={this.handleCasInput} marginForm />
                             <TextField required id="description" label="Exposé du problème" type="text" className="txtField" onChange={this.handleDescriptionInput} multiline rowsMax="5" marginForm />
-                            <label>Catégorie juridique <select>
+                            <label>Catégorie juridique <select defaultValue={this.state.type} onChange={this.handleCategorieSelection}>
                                 {getCategorieJuridique()}
                             </select>
                             </label>
