@@ -8,11 +8,18 @@ var ReferentielsApi = require('ReferentielsApi');
 class DetailCas extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { ...this.props.selectedCas };
+
+        this.handleCategorieSelection = this.handleCategorieSelection.bind(this);
+        this.handleCategorieSelection = this.handleCategorieSelection.bind(this);
+    }
+    handleCategorieSelection() {
+
+    }
+    handleSexeSelection() {
+
     }
     render() {
-        let { adresse, age, cas, createdBy, description, etat, id, nom, prenom, type, telephone } = this.props.selectedCas;
-        console.log('DetailCas');
-        console.log(this.props.selectedCas);
         let getCategorieJuridique = () => {
             let results = ReferentielsApi.getCategorieJuridique();
             return results.map((categorie) => {
@@ -24,28 +31,28 @@ class DetailCas extends React.Component {
         }
         return (
             <Paper elevation={4} >
-                <Typography type="display2" className="text-center header_title">{nom} {prenom}</Typography>
-                <Typography className="text-center ">Cas créé par {createdBy.nom} {createdBy.prenom}</Typography>
+                <Typography type="display2" className="text-center header_title">{this.state.nom} {this.state.prenom}</Typography>
+                <Typography className="text-center ">Cas créé par {this.state.createdBy.nom} {this.state.createdBy.prenom}</Typography>
                 <Typography className="text-center ">Date de création 01/01/1970</Typography>
                 <Typography className="text-center ">Date de derniére modification 01/01/1970</Typography>
 
                 <div className="row content_container">
                     <div className="small-6 small-centered columns">
                         <form >
-                            <TextField required id="nom" value={nom} label="Nom" type="text" className="txtField" marginForm />
-                            <TextField required id="prenom" value={prenom} label="Prénom" type="text" className="txtField" marginForm />
-                            <TextField required id="age" value={age} label="Age" type="number" className="txtField" marginForm />
-                            <RadioGroup aria-label="Sexe" name="gender" className="radioGroup_display">
-                                <LabelRadio label="Homme" value="male" />
-                                <LabelRadio label="Femme" value="female" />
+                            <TextField required id="nom" value={this.state.nom} label="Nom" type="text" className="txtField" marginForm />
+                            <TextField required id="prenom" value={this.state.prenom} label="Prénom" type="text" className="txtField" marginForm />
+                            <TextField required id="age" value={this.state.age} label="Age" type="number" className="txtField" marginForm />
+                            <RadioGroup aria-label="Sexe" name="gender" className="radioGroup_display" selectedValue={this.state.sexe} onChange={this.handleSexeSelection}>
+                                <LabelRadio label="Homme" value="H" />
+                                <LabelRadio label="Femme" value="F" />
                             </RadioGroup>
 
-                            <TextField required id="adresse" value={adresse} label="Adresse" type="text" className="txtField" marginForm />
-                            <TextField required id="phone" value={telephone} label="Téléphone" type="text" className="txtField" marginForm />
+                            <TextField required id="adresse" value={this.state.adresse} label="Adresse" type="text" className="txtField" marginForm />
+                            <TextField required id="phone" value={this.state.telephone} label="Téléphone" type="text" className="txtField" marginForm />
 
-                            <TextField required id="cas" value={cas} label="Cas" type="text" className="txtField" marginForm />
-                            <TextField required id="description" value={description} label="Exposé du problème" type="text" className="txtField" multiline rowsMax="5" marginForm />
-                            <label>Catégorie juridique <select>
+                            <TextField required id="cas" value={this.state.cas} label="Cas" type="text" className="txtField" marginForm />
+                            <TextField required id="description" value={this.state.description} label="Exposé du problème" type="text" className="txtField" multiline rowsMax="5" marginForm />
+                            <label>Catégorie juridique <select defaultValue={this.state.type} onChange={this.handleCategorieSelection}>
                                 {getCategorieJuridique()}
                             </select>
                             </label>
