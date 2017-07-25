@@ -1,6 +1,13 @@
 var React = require('react');
 var { Paper, Button, Typography, TextField, LabelRadio, RadioGroup, Divider } = require('material-ui');
 var AddIcon = require('material-ui-icons').Add;
+import Dialog, {
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+} from 'material-ui/Dialog';
+import Slide from 'material-ui/transitions/Slide';
 var shortid = require('shortid');
 
 var ReferentielsApi = require('ReferentielsApi');
@@ -19,7 +26,8 @@ class Nouveau extends React.Component {
             prenom: '',
             sexe: '',
             telephone: '',
-            type: ''
+            type: '',
+            openDialog: false
         }
         this.handleAdresseInput = this.handleAdresseInput.bind(this);
         this.handleAgeInput = this.handleAgeInput.bind(this);
@@ -30,6 +38,7 @@ class Nouveau extends React.Component {
         this.handleTelephoneInput = this.handleTelephoneInput.bind(this);
         this.handleSexeSelection = this.handleSexeSelection.bind(this);
         this.handleCategorieSelection = this.handleCategorieSelection.bind(this);
+        this.handleRequestClose = this.handleRequestClose.bind(this);
 
         this.handleAddNewCas = this.handleAddNewCas.bind(this);
     }
@@ -68,6 +77,21 @@ class Nouveau extends React.Component {
             telephone: e.target.value
         });
     }
+    handleSexeSelection(event, value) {
+        this.setState({ sexe: value });
+    }
+    handleCategorieSelection(e) {
+        this.setState({
+            type: e.target.value
+        });
+    }
+    handleRequestClose = () => {
+        this.setState({
+            openDialog: false
+        });
+        this.props.history.push('/suivi');
+    }
+
     handleAddNewCas() {
         let editeur = {
             id: shortid.generate(),
@@ -78,14 +102,8 @@ class Nouveau extends React.Component {
         };
         let newCas = { ...this.state, ...editeur };
         CasApi.addNewCas(newCas);
-        this.props.history.push('/suivi');
-    }
-    handleSexeSelection(event, value) {
-        this.setState({ sexe: value });
-    }
-    handleCategorieSelection(e) {
         this.setState({
-            type: e.target.value
+            openDialog: true
         });
     }
     render() {
@@ -133,6 +151,17 @@ class Nouveau extends React.Component {
                             </Button>
                         </div>
                     </div>
+                    <Dialog open={this.state.openDialog} transition={Slide} onRequestClose={this.handleRequestClose}>
+                        <DialogTitle>
+                            Nouveau cas.
+                            </DialogTitle>
+                        <DialogContent>
+                            <DialogContentText>Cas créé avec succés.</DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={this.handleRequestClose} color="accent">OK</Button>
+                        </DialogActions>
+                    </Dialog>
                 </div>
             </Paper>
         );
