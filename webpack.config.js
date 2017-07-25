@@ -29,6 +29,7 @@ module.exports = {
             SuiviCas: "app/components/SuiviCas.jsx",
             Cas: "app/components/Cas.jsx",
             DetailCas: "app/components/DetailCas.jsx",
+            Conseiller: "app/components/Conseiller.jsx",
             Filtre: "app/widgets/Filtre.jsx",
             PrivateRoute: "app/components/router/PrivateRoute.jsx",
             PublicRoute: "app/components/router/PublicRoute.jsx",

@@ -26,8 +26,10 @@ class Nav extends React.Component {
                                 </IconButton>
                                 <Typography type="title" color="inherit" >Boutique de droit</Typography>
                                 <div className="menu_container">
-                                    <NavLink exact to="/new" activeClassName="active"><Button color="contrast">Créer un nouveau cas</Button></NavLink>
+                                    <NavLink exact to="/new" activeClassName="active"><Button color="contrast">Nouveau cas</Button></NavLink>
                                     <NavLink exact to="/suivi" activeClassName="active"><Button color="contrast">Suivi des cas</Button></NavLink>
+                                    <NavLink exact to="/conseiller" activeClassName="active"><Button color="contrast">Nouveau conseiller</Button></NavLink>
+                                    <NavLink exact to="/stats" activeClassName="active"><Button color="contrast">Statistiques</Button></NavLink>
                                 </div>
                                 <NavLink exact to="/" activeClassName="active noborder"><Button color="contrast" onClick={this.deconnecter}>Se déconnecter</Button></NavLink>
                                 <Avatar className="avatar">AM</Avatar>
